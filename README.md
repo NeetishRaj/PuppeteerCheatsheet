@@ -46,3 +46,38 @@ await page.evaluate(async () => {
 });
 }
 ```
+
+### Chrome console scraping to copy-clipboard
+```js
+const list = document.querySelectorAll('a');
+const final_data = [];
+for(let item of list) {
+    final_data.push(item.href);
+}
+window.final_data_text = JSON.stringify(final_data);
+window.final_data_text += ',';
+console.log(window.final_data_text);
+
+
+// To copy automatically
+window.copy_input = document.createElement('input');
+window.copy_input.setAttribute('type', 'text');
+
+let copy_button = document.createElement('button');
+copy_button.textContent = "Copy the Shit";
+copy_button.style.width = '500px';
+copy_button.style.height = '200px';
+copy_button.style.backgroundColor = "black";
+copy_button.style.color = "white";
+document.body.prepend(copy_button);
+
+copy_button.onclick = copy_text
+
+function copy_text() {
+	window.copy_input.value = window.final_data_text;
+
+	window.copy_input.select();
+	window.copy_input.setSelectionRange(0, window.copy_input.value.length)
+	navigator.clipboard.writeText(window.copy_input.value);
+}
+```
