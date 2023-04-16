@@ -1,9 +1,8 @@
 # Puppeteer Cheatsheet
 
-### Skip fetching images
 
 
-Wait for random seconds
+### Wait for random seconds
 ```js
 const TwoToFiveSeconds = (Math.floor(Math.random() * 2) + 2) * 1000;
 
@@ -11,6 +10,7 @@ await page.waitForTimeout(TwoToFiveSeconds);
 ```
 
 
+### Skip fetching images
 Greatly speeds up the automation especially in e-commerce sites with shit ton of images.
 
 ```js
