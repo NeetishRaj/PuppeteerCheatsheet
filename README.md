@@ -25,6 +25,17 @@ page.on('request', async (request) => {
 }); 
 ```
 
+### use evaluate => b.click rather than direct click to activate scroll and click automatically
+```js
+    const load_more_button = await page.waitForSelector(load_more_button_selector);
+    await load_more_button.evaluate(b => b.click());
+    
+    // Above is always better than
+    
+    await page.waitForSelector(load_more_button_selector);
+    await page.click(load_more_button_selector)
+```
+
 ### Auto scroll part by part  to the end of the page
 ```js
 async function autoScroll(page){
