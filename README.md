@@ -13,6 +13,14 @@ const TwoToFiveSeconds = (Math.floor(Math.random() * 2) + 2) * 1000;
 await page.waitForTimeout(TwoToFiveSeconds);
 ```
 
+### Check if some element present or not
+```js
+  try {
+    const is_product_lists = (await page.$('div.some-element')) || "";
+    if(is_product_lists) return "element_present"; 
+  } catch (error) {
+  }
+```
 
 ### Skip fetching images
 Greatly speeds up the automation especially in e-commerce sites with shit ton of images.
