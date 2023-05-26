@@ -1,6 +1,10 @@
 # Puppeteer Cheatsheet
 
 
+### Wait for selector
+```js
+await page.waitForSelector('div.button-info');
+```
 
 ### Wait for random seconds
 ```js
