@@ -17,10 +17,10 @@ await page.waitForTimeout(TwoToFiveSeconds);
 ```js
 await page.goto(URL, { waitUntil: 'networkidle0' });
 
-  await Promise.all([
-    page.click('button.some-button'),
-    page.waitForNavigation({ waitUntil: 'networkidle0' }),
-  ]);
+await Promise.all([
+  page.click('button.some-button'),
+  page.waitForNavigation({ waitUntil: 'networkidle0' }),
+]);
 ```
 
 ### Check if some element present or not
