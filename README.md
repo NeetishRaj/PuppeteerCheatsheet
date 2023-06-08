@@ -13,6 +13,16 @@ const TwoToFiveSeconds = (Math.floor(Math.random() * 2) + 2) * 1000;
 await page.waitForTimeout(TwoToFiveSeconds);
 ```
 
+### wait  until netowrk idle
+```js
+await page.goto(URL, { waitUntil: 'networkidle0' });
+
+  await Promise.all([
+    page.click('button.some-button'),
+    page.waitForNavigation({ waitUntil: 'networkidle0' }),
+  ]);
+```
+
 ### Check if some element present or not
 ```js
   try {
