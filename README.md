@@ -32,9 +32,11 @@ await Promise.all([
   }
 ```
 
-### delete all text from input fields
+### write and delete text from Input Fields
 ```js
 await page.focus(search_input_selector);
+await page.keyboard.type("Hello World");
+
 await page.keyboard.down('Control');
 await page.keyboard.press('A');
 await page.keyboard.up('Control');
