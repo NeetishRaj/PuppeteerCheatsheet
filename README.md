@@ -45,7 +45,7 @@ await page.keyboard.press('Backspace');
 ```
 
 ### Skip fetching images
-Greatly speeds up the automation especially in e-commerce sites with shit ton of images.
+Greatly speeds up the automation especially in sites with lot of images.
 
 ```js
 // Limit requests 
