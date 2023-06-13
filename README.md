@@ -41,7 +41,17 @@ await page.keyboard.down('Control');
 await page.keyboard.press('A');
 await page.keyboard.up('Control');
 await page.keyboard.press('Backspace');
+```
 
+### Work with Iframes
+```js
+const elementHandle = await page.waitForSelector('#iframe-container > iframe');
+const frame = await elementHandle.contentFrame();
+
+await frame.waitForSelector('div.some-div')
+const data = await frame.evaluate(() => {
+	// js stuff on client side
+});
 ```
 
 ### Skip fetching images
