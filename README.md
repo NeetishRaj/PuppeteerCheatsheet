@@ -1,9 +1,11 @@
 # Puppeteer Cheatsheet
-
+API Documentation here:https://github.com/puppeteer/puppeteer/tree/main/docs/api
 
 ### Wait for selector
 ```js
 await page.waitForSelector('div.button-info');
+// or with timeout
+await page.waitForSelector('div.button-info', {timeout: 3000});
 ```
 
 ### Wait for random seconds
